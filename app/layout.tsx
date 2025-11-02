@@ -3,6 +3,8 @@ import { Nunito, Nunito_Sans , Sono} from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { createClient } from '@/prismicio';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -25,19 +27,17 @@ const nunito_sans = Nunito_Sans({
 export async function generateMetadata(): Promise<Metadata> {
   
   const client = createClient();
-  const page = await client.getSingle("settings");
+  const settings = await client.getSingle("settings");
  
   return {
-    title: page.data.site_title || "Flowrise fallback",
-    description:page.data.meta_description || "Flowrise is the relaxing app for you",
+    title: settings.data.site_title || "Flowrise fallback",
+    description: settings.data.meta_description || "Flowrise is the relaxing app for you",
     openGraph:{
-      images: [page.data.og_image.url || ""]
+      images: [settings.data.og_image.url || ""]
     }
   }
 }
  
-
-
 
 export default function RootLayout({
   children,
@@ -45,13 +45,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"   className={clsx(nunito.variable, nunito_sans.variable,sono.variable, "antialiased "
-  )}>
+    <html lang="en" className={clsx(nunito.variable,nunito_sans.variable,sono.variable, "antialiased")}>
      <body>
-      <header>Header</header>
+      <Header/>
         {children}
-        <footer>Footer</footer>
-      </body>
+      <Footer/>
+     </body>
     </html>
   );
 }

@@ -104,7 +104,7 @@ interface SettingsDocumentData {
    * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: settings.site_title
-   * - **Tab**: Main
+   * - **Tab**: Settings
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   site_title: prismic.KeyTextField;
@@ -115,7 +115,7 @@ interface SettingsDocumentData {
    * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: settings.meta_description
-   * - **Tab**: Main
+   * - **Tab**: Settings
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   meta_description: prismic.KeyTextField;
@@ -126,7 +126,7 @@ interface SettingsDocumentData {
    * - **Field Type**: Image
    * - **Placeholder**: *None*
    * - **API ID Path**: settings.og_image
-   * - **Tab**: Main
+   * - **Tab**: Settings
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   og_image: prismic.ImageField<never>;
@@ -137,7 +137,7 @@ interface SettingsDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: settings.navigation[]
-   * - **Tab**: Main
+   * - **Tab**: Settings
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
   navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;

@@ -5,7 +5,7 @@
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
+    "Settings": {
       "site_title": {
         "type": "Text",
         "config": {
@@ -32,7 +32,7 @@
         "type": "Group",
         "config": {
           "label": "Navigation",
-          "repeat": false,
+          "repeat": true,
           "fields": {
             "link": {
               "type": "Link",
