@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito, Nunito_Sans , Sono} from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
+  display:'swap'
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sono = Sono({
+  variable: "--font-sono",
   subsets: ["latin"],
+  display:'swap'
+});
+const nunito_sans = Nunito_Sans({
+  variable: "--font-nunito-sans",
+  subsets: ["latin"],
+  display:"swap"
 });
 
 export const metadata: Metadata = {
@@ -23,10 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en"   className={clsx(nunito.variable, nunito_sans.variable,sono.variable, "antialiased "
+  )}>
+     <body>
         {children}
       </body>
     </html>
